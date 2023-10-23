@@ -1,0 +1,4 @@
+baseURL = 'https://www.zellysnyder.com/'
+languageCode = 'en-us'
+title = 'Zelly Snyders personal website'
+theme = 'hugo-PaperMod'
