@@ -1,4 +1,4 @@
 baseURL = 'https://www.zelly.dev/'
 languageCode = 'en-us'
-title = 'Zelly Snyders personal website'
+title = 'Zelly Snyder'
 theme = 'hugo-PaperMod'
