@@ -1,0 +1,46 @@
+baseURL: 'https://www.zelly.dev/'
+languageCode: 'en-us'
+title: 'Zelly Snyder'
+theme: 'hugo-PaperMod'
+
+enableRobotsTXT: true
+
+minify:
+  minifyOutput: true
+
+params:
+  env: production
+  title: "Zelly Snyder"
+  description: "Blog about Linux, programming, systems design, software development and AI"
+  author: "Zelly Snyder"
+  DateFormat: "January 2, 2006"
+  defaultTheme: auto
+  disableThemeToggle: false
+  showtoc: true
+  tocopen: false
+  UseHugoToc: true
+  ShowReadingTime: true
+  ShowPostNavLinks: true
+  ShowCopyCodeButtons: true
+  comments: false
+  hidemeta: false
+  hideSummary: false
+
+  assets:
+    favicon: "https://www.zelly.dev/favicon.ico"
+    favicon16x16: "https://www.zelly.dev/icon/icon16.png"
+    favicon32x32: "https://www.zelly.dev/icon/icon32.png"
+    apple_touch_icon: "https:/www.zelly.dev/icon/icon256.png"
+    safari_pinned_tab: "https:/www.zelly.dev/icon/icon256.png"
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/proprietary"
+    - name: twitter
+      url: "https://twitter.com/zelcon"
+
+  editPost:
+    URL: "https://github.com/proprietary/hugo-site/content"
+    Text: "Suggest Changes"
+    appendFilePath: true
+

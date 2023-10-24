@@ -1,4 +1,0 @@
-baseURL = 'https://www.zelly.dev/'
-languageCode = 'en-us'
-title = 'Zelly Snyder'
-theme = 'hugo-PaperMod'
