@@ -27,11 +27,16 @@ params:
   hideSummary: false
 
   assets:
-    favicon: "https://www.zelly.dev/icon/favicon.ico"
-    favicon16x16: "https://www.zelly.dev/icon/icon16.png"
-    favicon32x32: "https://www.zelly.dev/icon/icon32.png"
-    apple_touch_icon: "https:/www.zelly.dev/icon/icon256.png"
-    safari_pinned_tab: "https:/www.zelly.dev/icon/icon256.png"
+    favicon: "/icon/favicon.ico"
+    favicon16x16: "/icon/icon16.png"
+    favicon32x32: "/icon/icon32.png"
+    apple_touch_icon: "/icon/icon180.png"
+    safari_pinned_tab: "/icon/safari_pinned_tab.svg"
+
+  homeInfoParams:
+    Title: "Welcome to my blog"
+    Content: >
+      Linux, programming
 
   socialIcons:
     - name: github
