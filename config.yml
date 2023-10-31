@@ -3,6 +3,8 @@ languageCode: 'en-us'
 title: 'Zelly Snyder'
 theme: 'hugo-PaperMod'
 
+enableEmoji: true
+enableInlineShortcodes: true
 enableRobotsTXT: true
 
 minify:
@@ -36,7 +38,7 @@ params:
   homeInfoParams:
     Title: "Welcome to my blog"
     Content: >
-      Linux, programming
+      Linux, programming. Reach me: [`zelly@zelcon.net`](mailto:zelly@zelcon.net)
 
   socialIcons:
     - name: github
@@ -48,3 +50,32 @@ params:
     text: "Zelly Snyder's blog"
     icon: "/icon/icon.svg"
     iconHeight: 32
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+    menu:
+      main:
+        - name: GPG key
+          url: gpg-pgp-public-key
+          weight: 5
+        - name: Archive
+          url: archives
+          weight: 10
+        - name: Search
+          url: search/
+          weight: 10
+        - name: Tags
+          url: tags/
+          weight: 10
