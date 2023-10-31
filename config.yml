@@ -38,13 +38,15 @@ params:
   homeInfoParams:
     Title: "Welcome to my blog"
     Content: >
-      Linux, programming. Reach me: [`zelly@zelcon.net`](mailto:zelly@zelcon.net)
+      Linux, programming, tutorials, tips
 
   socialIcons:
     - name: github
       url: "https://github.com/proprietary"
     - name: twitter
       url: "https://twitter.com/zelcon"
+    - name: email
+      url: "mailto:zelly@zelcon.net"
 
   label:
     text: "Zelly Snyder's blog"
