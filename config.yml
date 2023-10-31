@@ -46,7 +46,7 @@ params:
     - name: twitter
       url: "https://twitter.com/zelcon"
     - name: email
-      url: "mailto:zelly@zelcon.net"
+      url: "mailto:zelcon@zelcon.net"
 
   label:
     text: "Zelly Snyder's blog"
