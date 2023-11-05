@@ -71,7 +71,7 @@ languages:
       series: series
     menu:
       main:
-        - name: GPG key
+        - name: PGP key
           url: gpg-pgp-public-key
           weight: 5
         - name: Archive
