@@ -6,20 +6,6 @@ draft = false
 
 These are all **my opinions** on the ideal software stack. I may revise and edit this over time.
 
-## Operating System
-
-Been using GNU/Linux for a decade and can attest to its greatness. But what distro?
-
-**NixOS**
-
-NixOS lets you declaratively state your configuration, which is something sorely lacking. Ever had to manually copy dotfiles, lists of packages installed, etc., to a new machine? Yeah, that's what NixOS solves.
-
-`Docker : applications :: NixOS : operating system`
-
-Plus its package manager doubles as a build tool for [reproducible builds](https://en.wikipedia.org/wiki/Reproducible_builds). The Nix family of OS (and this includes Guix) is probably the first real non-incremental advancement in operating systems design since Windows XP.
-
-That said, if you are just starting with Linux, or just want something that is stable and works, I recommend Debian. For just a desktop OS you are casually using and don't really care about this stuff, you can't go wrong with MacOS. Personally not a fan of Windows.
-
 ## Filesystem
 
 **ZFS**
@@ -28,8 +14,8 @@ Since it can run on Linux now with OpenZFS, there's no reason to use anyting els
 
 Notable runner-ups:
 
-0. btrfs
-0. bcachefs
+0. btrfs, which is like ZFS but is in the kernel tree
+0. [bcachefs](https://bcachefs.org/) which is being merged in kernel 5.7 and is a promising alternative to both ZFS and btrfs (but I'd wait for it to be used for a few years and data recovery tools to be made before switching to it)
 
 ## Shell
 
@@ -46,6 +32,12 @@ I find that Emacs configured with [Language Server Protocol (LSP)](https://micro
 ## Programming Languages
 
 This is very difficult because you only choose languages for a practical task, and often there is a more or less objectively correct choice of language. Additionally, many of the factors that go into choosing a language, such as library availability and talent availability, depend on [which ones everyone else likes](https://en.wikipedia.org/wiki/Keynesian_beauty_contest). So subjective assessments of languages are irrelevant or even counterproductive, as there is often an objective answer to the question, "Which language should I use?" But I'm going to do it anyway, because this is about my opinion of the *ideal* software stack. 
+
+### "General purpose"
+
+**Java**
+
+Or any JVM language like Kotlin. Really, just use the JVM. It is a modern marvel. It balances speed, reliability and ease-of-use in a remarkable way. It is unlikely anything else will catch up to it at this point.
 
 ### Systems
 
@@ -94,12 +86,6 @@ TODO add section when I learn one (e.g., Coq, SPARK)
 
 TODO will add when I learn one...probably Verilog
 
-### "General purpose"
-
-**Java**
-
-Or any JVM language. Really, just use the JVM. It is a modern marvel. It is unlikely anything else will catch up to it at this point.
-
 ### Academic
 
 **Common Lisp**
@@ -111,3 +97,29 @@ The alternatives for this category would be things like Haskell, F#, OCaml, Sche
 ## Database
 
 **PostgreSQL**
+
+## Operating System
+
+Been using GNU/Linux for a decade and can attest to its greatness. But what distro?
+
+**NixOS**
+
+NixOS lets you declaratively state your configuration, which is something sorely lacking. Ever had to manually copy dotfiles, lists of packages installed, etc., to a new machine? Yeah, that's what NixOS solves.
+
+`Docker : applications :: NixOS : operating system`
+
+Plus its package manager doubles as a build tool for [reproducible builds](https://en.wikipedia.org/wiki/Reproducible_builds). The Nix family of OS (and this includes Guix) is probably the first real non-incremental advancement in operating systems design since Windows XP.
+
+That said, if you are just starting with Linux, or just want something that is stable and works, I recommend Debian. For just a desktop OS you are casually using and don't really care about this stuff, you can't go wrong with MacOS.
+
+My ranking of operating systems:
+
+0. NixOS (a Linux distro focused on reproducibility and functional programming concepts)
+0. Debian (a versatile, general purpose Linux distro that the most software is compatible with because it is the most popular)
+0. Qubes OS (a Linux distro focused on security by isolating applications into their own VMs)
+0. MacOS (it just works)
+0. Any other GNU/Linux distro. (RHEL, Fedora, Gentoo, Arch, etc. all fit in here. Good because they are Linux, but not particularly interesting anymore.)
+0. OpenBSD (security-focused UNIX; creators of OpenSSH)
+0. FreeBSD (unlike Linux which has you mix and match millions of packages for every basic thing, FreeBSD is an all-in-one system with great documentation; only problem is that it's getting abandoned)
+0. Plan9 (a meme OS, not really something you'd use outside of a VM for fun, but it's a great alternative conception of what an OS should be)
+0. Windows
