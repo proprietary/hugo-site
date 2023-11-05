@@ -18,7 +18,7 @@ NixOS lets you declaratively state your configuration, which is something sorely
 
 Plus its package manager doubles as a build tool for [reproducible builds](https://en.wikipedia.org/wiki/Reproducible_builds). The Nix family of OS (and this includes Guix) is probably the first real non-incremental advancement in operating systems design since Windows XP.
 
-That said, if you are just starting with Linux, or just want something that is stable and works, I recommend Debian. For just a dekstop OS you are casually using and don't really care about this stuff, you can't go wrong with MacOS. Personally not a fan of Windows.
+That said, if you are just starting with Linux, or just want something that is stable and works, I recommend Debian. For just a desktop OS you are casually using and don't really care about this stuff, you can't go wrong with MacOS. Personally not a fan of Windows.
 
 ## Filesystem
 
@@ -27,6 +27,7 @@ That said, if you are just starting with Linux, or just want something that is s
 Since it can run on Linux now with OpenZFS, there's no reason to use anyting else except for special cases. There is no other filesystem with as many man-hours put into it as ZFS, and [it shows](https://openzfs.github.io/openzfs-docs/Basic%20Concepts/RAIDZ.html).
 
 Notable runner-ups:
+
 0. btrfs
 0. bcachefs
 
@@ -51,6 +52,7 @@ This is very difficult because you only choose languages for a practical task, a
 **Rust**
 
 Notable runner-ups:
+
 0. C++
 0. Zig
 0. Ada
