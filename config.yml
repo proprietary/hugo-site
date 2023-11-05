@@ -47,6 +47,8 @@ params:
       url: "https://twitter.com/zelcon"
     - name: email
       url: "mailto:zelcon@zelcon.net"
+    - name: telegram
+      url: "https://t.me/zelcon"
 
   label:
     text: "Zelly Snyder's blog"

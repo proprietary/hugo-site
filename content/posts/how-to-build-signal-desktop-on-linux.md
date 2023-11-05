@@ -9,13 +9,13 @@ Signal offers runnable .deb packages for Debian-based Linux (including Ubuntu am
 Clone the repository.
 
 ```bash
-    git clone https://github.com/signalapp/Signal-Desktop.git && cd Signal-Desktop
+git clone https://github.com/signalapp/Signal-Desktop.git && cd Signal-Desktop
 ```
 
 Change package.json to also build an AppImage,
 
 ```
-         "node_modules/sharp"
+       "node_modules/sharp"
        ],
        "target": [
 -        "deb"
@@ -30,13 +30,13 @@ Then build it:
 
 
 ```bash
-    nvm use
-    npm install --global yarn
-    yarn install --frozen-lockfile
-    yarn grunt
-    yarn icon-gen
-    yarn build:webpack
-    yarn bulid-release
+nvm use
+npm install --global yarn
+yarn install --frozen-lockfile
+yarn grunt
+yarn icon-gen
+yarn build:webpack
+yarn bulid-release
 ```
 
 Your AppImage will be in release/. You can add this to your PATH; e.g. like what I did:

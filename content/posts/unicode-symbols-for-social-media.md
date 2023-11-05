@@ -97,19 +97,19 @@ On *Android or iOS*, as of the time of writing, there is no native equivalent to
 You think I manually wrote all this?
 
 ```python
-    #!/usr/bin/env python3
-    
-    import unicodedata
-    
-    def unicode_description(src):
-         n = ord(src)
-         h = hex(n)
-         name = unicodedata.name(src).lower()
-         return f"{src} – #{h} – {name}"
-    
-    def print_unicode_descriptions(s):
-         "Paste a string of a bunch of Unicode symbols as input"
-         s = s.split()
-         for ch in s:
-             print("- " + unicode_description(ch))
+#!/usr/bin/env python3
+
+import unicodedata
+
+def unicode_description(src):
+     n = ord(src)
+     h = hex(n)
+     name = unicodedata.name(src).lower()
+     return f"{src} – #{h} – {name}"
+
+def print_unicode_descriptions(s):
+     "Paste a string of a bunch of Unicode symbols as input"
+     s = s.split()
+     for ch in s:
+         print("- " + unicode_description(ch))
 ```

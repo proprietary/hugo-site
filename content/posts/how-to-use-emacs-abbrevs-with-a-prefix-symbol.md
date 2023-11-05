@@ -15,60 +15,60 @@ The solution was to hack abbrevs to be namespaced under a prefix symbol. I like 
 Here’s the macro:
 
 ```lisp
-    (defmacro make-prefixed-abbrev-table (prefix-char abbrev-spec)
-      "Creates and loads an abbrev-table with abbrevs prefixed by a PREFIX-CHAR. The abbrev table is loaded into local buffer scope.
-    
-    RETURNS the new abbrev table.
-    
-    Abbrev tables by themselves can only match plain words, like 'abc'. With this macro, you can prefix words with a special character, like '$', so that 'abc' would only expand to its expansion if you wrote '$abc'. This makes it harder to unintentionally write an abbrev because the prefix character makes it unlikely.
-    (defmacro make-prefixed-abbrev-table (prefix-char abbrev-spec)
-      "Creates and loads an abbrev-table with abbrevs prefixed by a PREFIX-CHAR. The abbrev table is loaded into local buffer scope.
-    
-    RETURNS the new abbrev table.
-    
-    Abbrev tables by themselves can only match plain words, like 'abc'. With this macro, you can prefix words with a special character, like '$', so that 'abc' would only expand to its expansion if you wrote '$abc'. This makes it harder to unintentionally write an abbrev because the prefix character makes it unlikely.
-    
-    Example:
-    
-    (make-prefixed-abbrev-table ?$ '((\"epsilon\" \"ε\")))
-    
-    Then when you're writing:
-    
-    $epsilon → ε"
-      (assert (and (char-or-string-p prefix-char)
-                   (or (not (sequencep prefix-char))
-                       (= 1 (length prefix-char))))
-              t
-              "PREFIX-CHAR must either be a character or a string one character long")
-      `(prog1 (define-abbrev-table 'local-abbrev-table
-                ,abbrev-spec
-                :case-fixed t
-                :regexp ,(concat "\\" (char-to-string prefix-char) "\\([a-zA-Z0-9]+\\)")
-                )
-         (add-function :around (local 'abbrev-expand-function)
-                       #'(lambda (expand-fn)
-                           (let ((prev-point (save-excursion
-                                               (backward-word-strictly)
-                                               (point))))
-                             (when (funcall expand-fn)
-                               (save-excursion
-                                 (goto-char prev-point)
-                                 (delete-char 1))))))))
+(defmacro make-prefixed-abbrev-table (prefix-char abbrev-spec)
+  "Creates and loads an abbrev-table with abbrevs prefixed by a PREFIX-CHAR. The abbrev table is loaded into local buffer scope.
+
+RETURNS the new abbrev table.
+
+Abbrev tables by themselves can only match plain words, like 'abc'. With this macro, you can prefix words with a special character, like '$', so that 'abc' would only expand to its expansion if you wrote '$abc'. This makes it harder to unintentionally write an abbrev because the prefix character makes it unlikely.
+(defmacro make-prefixed-abbrev-table (prefix-char abbrev-spec)
+  "Creates and loads an abbrev-table with abbrevs prefixed by a PREFIX-CHAR. The abbrev table is loaded into local buffer scope.
+
+RETURNS the new abbrev table.
+
+Abbrev tables by themselves can only match plain words, like 'abc'. With this macro, you can prefix words with a special character, like '$', so that 'abc' would only expand to its expansion if you wrote '$abc'. This makes it harder to unintentionally write an abbrev because the prefix character makes it unlikely.
+
+Example:
+
+(make-prefixed-abbrev-table ?$ '((\"epsilon\" \"ε\")))
+
+Then when you're writing:
+
+$epsilon → ε"
+  (assert (and (char-or-string-p prefix-char)
+               (or (not (sequencep prefix-char))
+                   (= 1 (length prefix-char))))
+          t
+          "PREFIX-CHAR must either be a character or a string one character long")
+  `(prog1 (define-abbrev-table 'local-abbrev-table
+            ,abbrev-spec
+            :case-fixed t
+            :regexp ,(concat "\\" (char-to-string prefix-char) "\\([a-zA-Z0-9]+\\)")
+            )
+     (add-function :around (local 'abbrev-expand-function)
+                   #'(lambda (expand-fn)
+                       (let ((prev-point (save-excursion
+                                           (backward-word-strictly)
+                                           (point))))
+                         (when (funcall expand-fn)
+                           (save-excursion
+                             (goto-char prev-point)
+                             (delete-char 1))))))))
 ```
 
 Usage:
 
 ```lisp
-    (defun activate-my-writing-abbrevs ()
-      (interactive)
-      (make-prefixed-abbrev-table ?$ ;; use $ as prefix symbol
-                                  '(
-                                    ("beta" "β")
-                                    ("alpha" "α")
-                                    ("Alpha" "Α")
-                                    ("crylaugh" "😂")
-                                    ("rofl" "🤣")
-                                    )))
+(defun activate-my-writing-abbrevs ()
+  (interactive)
+  (make-prefixed-abbrev-table ?$ ;; use $ as prefix symbol
+                              '(
+                                ("beta" "β")
+                                ("alpha" "α")
+                                ("Alpha" "Α")
+                                ("crylaugh" "😂")
+                                ("rofl" "🤣")
+                                )))
 ```
 
 When editing your file, ~M-x activate-my-writing-abbrevs~ to see it in action.
