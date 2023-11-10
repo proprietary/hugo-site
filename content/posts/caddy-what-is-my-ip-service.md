@@ -32,7 +32,7 @@ Then finally, remember to restart Caddy. If you are using systemd as your launch
 And that's it! As an example, you can test mine (which is hopefully still running whenever you're reading this) by doing the following:
 
 ```bash
-curl https://ip.zelcon.net
+curl -4 https://ip.zelcon.net
 # ... your IPv4 address shows up here
 
 curl -6 https://ip.zelcon.net
