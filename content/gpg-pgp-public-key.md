@@ -1,5 +1,5 @@
 ---
-title: "GPG key"
+title: "My PGP Public Key"
 ---
 
 ```
