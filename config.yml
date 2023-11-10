@@ -1,4 +1,4 @@
-baseURL: 'https://www.zellysnyder.com/'
+baseURL: 'https://www.zellysnyder.com'
 languageCode: 'en-us'
 title: 'Zelly Snyder'
 theme: 'hugo-PaperMod'
