@@ -27,6 +27,8 @@ EOF
 
 Explanation: Cloudflare passes the true client's IP in a header named "CF-Connecting-IP". Were you to simply grab the remote address of the incoming socket, you would get one of Cloudflare's IP addresses.
 
+Then finally, remember to restart Caddy. If you are using systemd as your launcher, then run: `$ sudo systemctl reload caddy`.
+
 And that's it! As an example, you can test mine (which is hopefully still running whenever you're reading this) by doing the following:
 
 ```bash
