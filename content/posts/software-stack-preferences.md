@@ -1,10 +1,10 @@
 +++
-title = 'Software Stack Preferences'
+title = 'Ranking tools'
 date = 2023-10-23T07:32:10-07:00
 draft = false
 +++
 
-These are all **my opinions** on the ideal software stack. I may revise and edit this over time.
+These are all **my opinions** on the ideal set of software. I may revise and edit this over time.
 
 ## Filesystem
 
@@ -25,9 +25,7 @@ Notable runner-ups:
 
 **Emacs**
 
-VSCode is good too--maybe it's a modern Emacs--but it doesn't work in a terminal, so Emacs wins in versatility. Emacs is also significantly faster. The problem with VSCode is it lies in this weird middle zone between a text editor and an IDE. There are great IDEs like JetBrains's products or [the normal Visual Studio](https://visualstudio.microsoft.com/downloads/). If you want a fully featured IDE experience, use those.
-
-I find that Emacs configured with [Language Server Protocol (LSP)](https://microsoft.github.io/language-server-protocol/) and [Debugger Adapter Protocol (DAP)](https://microsoft.github.io/debug-adapter-protocol/) can gain feature parity with VSCode. However, this takes some amount of configuration, and unless you really like Emacs or Lisp, I'd say skip it and just use VSCode like everyone else.
+Emacs works in TTYs / terminals / `tmux(1)` so it will always be in a different category from VSCode and the like.
 
 ## Programming Languages
 
@@ -56,15 +54,15 @@ By "systems" I mean low level languages where memory management is deliberate, b
 
 **TypeScript**
 
-Many many people have tried to dethrone JS. But the only one that succeded was the one smart enough to be a superset of JavaScript. It's the C++ playbook; get adoption through source compatibliity with the most popular language. You could instantly take a JS codebase and turn it into a TypeScript with zero changes. That's powerful for adoption. `C++ : C :: TypeScript : JavaScript`. But the type safety of TypeScript is very welcome. It nearly fixes all the wartsof JavaScript, and it does it all at compile time with virtually no runtime cost--how can you complain?
+You could instantly take exiting JS and convert it into a TypeScript with zero changes. That's powerful for adoption.
 
-As for which frontend framework...that changes by the week, so no suggestion there that I would feel confident sticking to. Next.js seems standard though, as of the time of writing...
+`C++ : C :: TypeScript : JavaScript`
 
 ### Web backend
 
 **Go**
 
-Go is essentially a DSL for backend web development or web APIs. It serves that purpose very well. However, "backend" is very broad and can mean a lot of things depending on the type of web application it is. If it's typical, then Go should be more than sufficient.
+Go is essentially a DSL for backend web development or web APIs. It serves that purpose very well.
 
 ### Scientific
 
@@ -76,7 +74,7 @@ The other potential choices would be: Python, R, Mathematica, MATLAB/Octave, For
 
 **Ruby**
 
-I know everyone uses Python. I know that makes Python the better choice in practice just because so many people use it and there are so many resources for it, but it's not a great language. Ruby is much better at capturing the spirit of a scripting language. Consider that it has built-in operators and semantics for regexes (like Perl). It is just as batteries-included in the standard library as Python is. It has an acutal ISO standard, too, which gives it some permanence (i.e., unlike all these other Python competitiors, this one probably isn't going to disappear tomorrow). The language semantics are also very Lisp-like; it's not yet another Algol-descendant like C/Java/Python/<insert almost every language>). The only downside to Ruby is how slow the official implementation is--but hey, this is just for *scripting*, like stuff you'd use Bash for.
+It has some benefits over Python for typical scripting. See: regular expression operators built-in to the language. It's a good `bash` replacement. Ruby also is unlikely to go away, being an ISO standard. However, Python is better for applications.
 
 ### Formal verification
 
@@ -90,9 +88,9 @@ TODO will add when I learn one...probably Verilog
 
 **Common Lisp**
 
-Yes, "academic" is a genre of programming language in my view. It's a type of language that is useless but is interesting. And my choice is Lisp. Lisp feels like [the last programming language you'll ever need](https://en.wikipedia.org/wiki/End_of_history), because if you need a domain specific language or a new type of syntax, you can just write a macro.
+Lisp feels like [the last programming language you'll ever need](https://en.wikipedia.org/wiki/End_of_history), because if you need a domain specific language or a new type of syntax, you can just write a macro.
 
-The alternatives for this category would be things like Haskell, F#, OCaml, Scheme, Racket ...
+The alternatives for this category would be things like Haskell, F#, OCaml, Scheme, Racket... None of them are very useful (sadly neither Lisp), but they are interesting nonetheless.
 
 ## Database
 
@@ -100,7 +98,7 @@ The alternatives for this category would be things like Haskell, F#, OCaml, Sche
 
 ## Operating System
 
-Been using GNU/Linux for a decade and can attest to its greatness. But what distro?
+Been using GNU/Linux for over decade now and can attest to its greatness. But what distro?
 
 **NixOS**
 
@@ -108,18 +106,15 @@ NixOS lets you declaratively state your configuration, which is something sorely
 
 `Docker : applications :: NixOS : operating system`
 
-Plus its package manager doubles as a build tool for [reproducible builds](https://en.wikipedia.org/wiki/Reproducible_builds). The Nix family of OS (and this includes Guix) is probably the first real non-incremental advancement in operating systems design since Windows XP.
-
-That said, if you are just starting with Linux, or just want something that is stable and works, I recommend Debian. For just a desktop OS you are casually using and don't really care about this stuff, you can't go wrong with MacOS.
+Plus its package manager doubles as a build tool for [reproducible builds](https://en.wikipedia.org/wiki/Reproducible_builds). The Nix family of OS (and this includes Guix) is probably the first real non-incremental advancement in operating systems design since Windows XP. It has a chance to become "the final word" in operating systems (on the server-side of course), the same way ZFS is the final word for filesystems.
 
 My ranking of operating systems:
 
 0. NixOS (a Linux distro focused on reproducibility and functional programming concepts)
 0. Debian (a versatile, general purpose Linux distro that the most software is compatible with because it is the most popular)
-0. Qubes OS (a Linux distro focused on security by isolating applications into their own VMs)
-0. MacOS (it just works)
-0. Any other GNU/Linux distro. (RHEL, Fedora, Gentoo, Arch, etc. all fit in here. Good because they are Linux, but not particularly interesting anymore.)
+0. MacOS (it literally just works)
+0. Qubes OS (a Linux distro focused on security by isolating applications into their own VMs; I'm a fan of any OS that actually comes up with new innovations)
+0. Any other GNU/Linux distro. (Gentoo, Arch, openSUSE, Slackware, etc. all fit in here. Good because they are Linux, but not particularly interesting anymore.)
 0. OpenBSD (security-focused UNIX; creators of OpenSSH)
-0. FreeBSD (unlike Linux which has you mix and match millions of packages for every basic thing, FreeBSD is an all-in-one system with great documentation; only problem is that it's getting abandoned)
-0. Plan9 (a meme OS, not really something you'd use outside of a VM for fun, but it's a great alternative conception of what an OS should be)
+0. FreeBSD (unlike Linux which has you mix and match millions of packages for every basic thing, FreeBSD is an all-in-one system with great documentation; only problem is that it's basically abandoned by now)
 0. Windows
