@@ -29,4 +29,4 @@ The "Shortcut" works by typing the it in the browser's address bar (such as `:w`
 | `Crates.io`          | `:crates`    | `https://crates.io/search?q=%s`                                                           |
 | `Docs.rs`            | `:docsrs`    | `https://docs.rs/releases/search?query=%s`                                                |
 | `Rust std docs`      | `:ruststd`   | `https://doc.rust-lang.org/std/?search=%s`                                                |
-
+| `CMake docs`         | `:cmake`     | `https://cmake.org/cmake/help/latest/search.html?q=%s`                                    |
