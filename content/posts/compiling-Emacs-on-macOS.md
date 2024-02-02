@@ -21,6 +21,7 @@ brew install \
 	libgccjit \
 	autoconf \
 	automake \
+    make \
 	jansson \
 	gnutls \
 	mailutils \
@@ -43,6 +44,13 @@ sudo port install \
 	gnutls \
 	ImageMagick \
 	tree-sitter
+
+# Set location of libgccjit in CFLAGS (used later in build)
+CFLAGS="-O3 \
+	-march=native \
+	-I/opt/local/include/gcc13 \
+	-L/opt/local/lib/gcc13 \
+	-Wl,-rpath,/opt/local/lib/gcc13 "
 ```
 
 Make sure `pkg-config` can find the libraries you just installed:
@@ -59,32 +67,32 @@ Clone source code and build:
 git clone git://git.savannah.gnu.org/emacs.git
 cd emacs
 ./autogen.sh
-CFLAGS="-O3 \
-	-march=native \
-	-I/opt/local/include/gcc13 \
-	-L/opt/local/lib/gcc13 \
-	-Wl,-rpath,/opt/local/lib/gcc13"
-./configure --with-ns \
-            --with-json \
-            --with-tree-sitter \
-            --with-native-compilation \
-            --with-imagemagick \
-            --with-mailutils \
-            --without-compress-install \
-            CFLAGS="${CFLAGS}"
-make -j $(sysctl -n hw.ncpu)
-make install
+
+# Change "--prefix=..." as you wish
+./configure \
+    --prefix=/usr/local \
+    --with-ns \
+    --disable-ns-self-contained \
+    --with-json \
+    --with-tree-sitter \
+    --with-native-compilation \
+    --with-imagemagick \
+    --with-mailutils \
+    --without-compress-install \
+    CFLAGS="${CFLAGS}"
+gmake -j $(sysctl -n hw.ncpu)
+sudo gmake install
 ```
 
 You may need to change some of the paths (like `/opt/local/lib`, `/opt/local/include`) if you have a non-standard directory for MacPorts or Homebrew. If you are having trouble, make sure that these paths point to where `$ find / -name 'libgccjit*'` .dylib's show up.
 
-After the build is successful, you can find the `Emacs.app` in `./nextstep`. You may want to install these to your system path like so:
+After the build is successful, you can find the `Emacs.app` in `./nextstep`. You may want to copy this to `/Applications` like a normal Mac App:
 
 ```bash
 cp -r ./nextstep/Emacs.app /Applications
-sudo ln -s /Applications/Emacs.app/Contents/MacOS/Emacs /usr/local/bin/emacs
-sudo ln -s /Applications/Emacs.app/Contents/MacOS/bin/* /usr/local/bin/
 ```
+
+Note that when you use the configure flag `--disable-ns-self-contained` as above, you also install Lisp files to the system `--prefix` directory, so you are able to use Emacs in the terminal as well without issues, but only if you use that flag.
 
 Happy Emacsing!
 
