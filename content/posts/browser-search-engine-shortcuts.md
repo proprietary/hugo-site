@@ -33,6 +33,8 @@ The "Shortcut" works by typing the it in the browser's address bar (such as `:w`
 | `Debian packages`    | `:deb`       | `https://packages.debian.org/search?keywords=%s&searchon=names&suite=bookworm&section=all` |
 | `Perplexity.ai`      | `:px`        | `https://www.perplexity.ai/search?s=o&q=%s`                                                |
 | `Bing`               | `:b`         | `https://www.bing.com/search?q=%s`                                                         |
+| `Kubernetes Docs`    | `:k8s`       | `https://kubernetes.io/search/?q=%s`                                                                                        |
+
 
 
 
