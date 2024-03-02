@@ -42,9 +42,11 @@ params:
 
   socialIcons:
     - name: github
-      url: "https://github.com/proprietary"
+      url: https://github.com/proprietary
     - name: email
-      url: "mailto:zelcon@zelcon.net"
+      url: mailto:zelcon@zelcon.net
+    - name: signal
+      url: https://signal.me/#eu/tccWuk7+AN5SjkwAkGeFp5KSm6vLzcvAdm5XxvOx4reCJe1zi5VFvp3tELdtQASQ
 
   label:
     text: "Zelly Snyder's blog"
