@@ -35,3 +35,6 @@ The "Shortcut" works by typing the it in the browser's address bar (such as `:w`
 | Bing                 | `:b`         | `https://www.bing.com/search?q=%s`                                                         |
 | Kubernetes Docs      | `:k8s`       | `https://kubernetes.io/search/?q=%s`                                                       |
 | Apple Developer Docs | `:aapl`      | `https://developer.apple.com/search/?q=%s&type=Documentation`                              |
+| Postgresql Docs      | `:postgres`  | `https://www.postgresql.org/search/?u=%2Fdocs%2F16%2F&q=%s`                                |
+| OpenSUSE packages    | `:suse`      | `https://packagehub.suse.com/search/?q=%s`                                                 |
+| Debian packages      | `:deb`       | `https://packages.debian.org/search?keywords=%s&searchon=names&suite=bookworm&section=all` |
