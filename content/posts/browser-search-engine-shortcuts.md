@@ -21,7 +21,7 @@ The "Shortcut" works by typing the it in the browser's address bar (such as `:w`
 | Github Code Search     | `:gh`        | `https://github.com/search?q=%s&type=code`                                                         |
 | NixOS packages         | `:nixpkgs`   | `https://search.nixos.org/packages?channel=24.05&sort=relevance&query=%s`                          |
 | NixOS options          | `:nixopts`   | `https://search.nixos.org/options?channel=24.05&sort=relevance&query=%s`                           |
-| NixOS wiki             | `:nixwiki`   | `https://nixos.wiki/index.php?search=%s`                                                           |
+| NixOS wiki             | `:nixwiki`   | `https://wiki.nixos.org/w/index.php?search=%s&title=Special%3ASearch`                              |
 | ArchWiki               | `:arch`      | `https://wiki.archlinux.org/title/Special:Search?search=%s`                                        |
 | ports.macports.org     | `:ports`     | `https://ports.macports.org/search?q=%s&name=on`                                                   |
 | Alpine packages        | `:alpine`    | `https://pkgs.alpinelinux.org/packages?name=%s&branch=edge&repo=&arch=&maintainer=`                |
