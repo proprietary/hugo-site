@@ -19,7 +19,8 @@ The "Shortcut" works by typing the it in the browser's address bar (such as `:w`
 | Python3 docs           | `:py`        | `https://docs.python.org/3/search.html?q=%s`                                                       |
 | Java JDK docs          | `:jdk`       | `https://docs.oracle.com/en/java/javase/22/docs/api/search.html?q=%s`                              |
 | Github Code Search     | `:gh`        | `https://github.com/search?q=%s&type=code`                                                         |
-| NixOS packages         | `:nixpkgs`   | `https://search.nixos.org/packages?query=%s`                                                       |
+| NixOS packages         | `:nixpkgs`   | `https://search.nixos.org/packages?channel=24.05&sort=relevance&query=%s`                          |
+| NixOS options          | `:nixopts`   | `https://search.nixos.org/options?channel=24.05&sort=relevance&query=%s`                           |
 | NixOS wiki             | `:nixwiki`   | `https://nixos.wiki/index.php?search=%s`                                                           |
 | ArchWiki               | `:arch`      | `https://wiki.archlinux.org/title/Special:Search?search=%s`                                        |
 | ports.macports.org     | `:ports`     | `https://ports.macports.org/search?q=%s&name=on`                                                   |
@@ -45,3 +46,4 @@ The "Shortcut" works by typing the it in the browser's address bar (such as `:w`
 | Ruby Gems              | `:rubygems`  | `https://rubygems.org/search?query=%s`                                                             |
 | AWS docs               | `:aws`       | `https://docs.aws.amazon.com/search/doc-search.html?searchPath=documentation&searchQuery=%s`       |
 | Maven Central          | `:mvn`       | `https://central.sonatype.com/search?q=%s`                                                         |
+| FRED                   | `:fred`      | `https://fred.stlouisfed.org/searchresults?st=%s`                                                  |
